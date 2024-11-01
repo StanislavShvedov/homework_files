@@ -32,7 +32,7 @@ def get_shop_list_by_dishes(dishes: list, person_count: int) -> dict:
             shop_dict[product['ingredient_name']] = []
             ingredient = {}
             ingredient['measure'] = product['measure']
-            ingredient['quantity'] = int(product['quantity']) * person_count
+            ingredient['quantity'] = (int(product['quantity']) * dishes.count(key)) * person_count
             shop_dict[product['ingredient_name']].append(ingredient)
     return shop_dict
 
